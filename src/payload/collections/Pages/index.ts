@@ -1,8 +1,7 @@
 import type { CollectionConfig } from 'payload/types'
 
-import { admins } from '../../access/admins'
-import { adminsOrPublished } from '../../access/adminsOrPublished'
-import { Archive } from '../../blocks/ArchiveBlock'
+import { isAdmin } from '../../access/is-admin'
+import { isAdminsOrIsPagePublished } from '../../access/is-admin-or-is-document-published'
 import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
 import { MediaBlock } from '../../blocks/MediaBlock'
@@ -32,10 +31,10 @@ export const Pages: CollectionConfig = {
     drafts: true,
   },
   access: {
-    read: adminsOrPublished,
-    update: admins,
-    create: admins,
-    delete: admins,
+    read: isAdminsOrIsPagePublished,
+    update: isAdmin,
+    create: isAdmin,
+    delete: isAdmin,
   },
   fields: [
     {
@@ -64,7 +63,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [CallToAction, Content, MediaBlock, Archive],
+              blocks: [CallToAction, Content, MediaBlock],
             },
           ],
         },

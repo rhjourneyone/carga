@@ -1,3 +1,3 @@
 import type { Access } from 'payload/config'
 
-export const anyone: Access = () => true
+export const isAnyone: Access = () => true

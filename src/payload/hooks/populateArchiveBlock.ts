@@ -1,13 +1,13 @@
 import type { AfterReadHook } from 'payload/dist/collections/config/types'
 
-import { adminsOrPublished } from '../access/adminsOrPublished'
+import { isAdminsOrIsPagePublished } from '../access/is-admin-or-is-document-published'
 import type { Page, Post } from '../payload-types'
 
 export const populateArchiveBlock: AfterReadHook = async ({ doc, context, req }) => {
   // pre-populate the archive block if `populateBy` is `collection`
   // then hydrate it on your front-end
   const payload = req.payload
-  const adminOrPublishedResult = await adminsOrPublished({ req: req })
+  const adminOrPublishedResult = await isAdminsOrIsPagePublished({ req: req })
   const adminOrPublishedQuery = adminOrPublishedResult
 
   const layoutWithArchive = await Promise.all(

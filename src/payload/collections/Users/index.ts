@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload/types'
 
-import { admins } from '../../access/admins'
-import { anyone } from '../../access/anyone'
+import { isAdmin } from '../../access/is-admin'
+import { isAnyone } from '../../access/is-anyone'
 import adminsAndUser from './access/adminsAndUser'
 import { checkRole } from './checkRole'
 import { ensureFirstUserIsAdmin } from './hooks/ensureFirstUserIsAdmin'
@@ -15,9 +15,9 @@ const Users: CollectionConfig = {
   },
   access: {
     read: adminsAndUser,
-    create: anyone,
+    create: isAnyone,
     update: adminsAndUser,
-    delete: admins,
+    delete: isAdmin,
     admin: ({ req: { user } }) => checkRole(['admin'], user),
   },
   hooks: {
@@ -48,9 +48,9 @@ const Users: CollectionConfig = {
         beforeChange: [ensureFirstUserIsAdmin],
       },
       access: {
-        read: admins,
-        create: admins,
-        update: admins,
+        read: isAdmin,
+        create: isAdmin,
+        update: isAdmin,
       },
     },
   ],
