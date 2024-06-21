@@ -1,0 +1,34 @@
+@import '../../_css/common';
+
+.flex {
+  display: flex;
+  gap:16px;
+}
+
+.card {
+  border: 1px solid navy;
+  border-radius: 5px;
+  padding: 24px 12px;
+  max-width: 33%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition-duration: .15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  &:hover {
+    background-color: navy;
+    color: white;
+    h1, h2, h3 {
+      color: limegreen
+    }
+    a {
+      color: white;
+    }
+  }
+}
+
+.link {
+  margin-top: var(--base);
+  text-decoration: underline;
+}

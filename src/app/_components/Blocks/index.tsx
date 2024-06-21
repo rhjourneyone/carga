@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 
 import { Page } from '../../../payload/payload-types.js'
+import { CardCollectionBlock } from '../../_blocks/CardCollection'
 import { ContentBlock } from '../../_blocks/Content'
 import { MediaBlock } from '../../_blocks/MediaBlock'
 import { toKebabCase } from '../../_utilities/toKebabCase'
@@ -9,6 +10,7 @@ import { VerticalPadding, VerticalPaddingOptions } from '../VerticalPadding'
 const blockComponents = {
   content: ContentBlock,
   mediaBlock: MediaBlock,
+  cardCollection: CardCollectionBlock,
 }
 
 export const Blocks: React.FC<{
@@ -24,7 +26,7 @@ export const Blocks: React.FC<{
       <Fragment>
         {blocks.map((block, index) => {
           const { blockName, blockType } = block
-
+          
           if (blockType && blockType in blockComponents) {
             const Block = blockComponents[blockType]
 

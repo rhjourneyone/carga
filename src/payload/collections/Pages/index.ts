@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload/types'
 
 import { isAdmin } from '../../access/is-admin'
 import { isAdminsOrIsPagePublished } from '../../access/is-admin-or-is-document-published'
+import { Cards } from '../../blocks/Cards'
 import { Content } from '../../blocks/Content'
 import { MediaBlock } from '../../blocks/MediaBlock'
 import { hero } from '../../fields/hero'
@@ -60,7 +61,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [Content, MediaBlock],
+              blocks: [Content, MediaBlock, Cards],
             },
           ],
         },

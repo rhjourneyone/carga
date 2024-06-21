@@ -480,65 +480,6 @@ export const home: Partial<Page> = {
       relationTo: 'projects',
       categories: [],
     },
-    {
-      blockType: 'cta',
-      blockName: 'CTA',
-      richText: [
-        {
-          children: [
-            {
-              text: 'This is a call to action',
-            },
-          ],
-          type: 'h4',
-        },
-        {
-          children: [
-            {
-              text: 'This is a custom layout building block ',
-            },
-            {
-              type: 'link',
-              linkType: 'custom',
-              url: '/admin',
-              children: [
-                {
-                  text: 'configured in the admin dashboard',
-                },
-              ],
-            },
-            {
-              text: '.',
-            },
-          ],
-        },
-      ],
-      links: [
-        {
-          link: {
-            type: 'reference',
-            url: '',
-            label: 'All posts',
-            appearance: 'primary',
-            reference: {
-              value: '{{POSTS_PAGE_ID}}',
-              relationTo: 'pages',
-            },
-          },
-        },
-        {
-          link: {
-            type: 'reference',
-            url: '',
-            label: 'All projects',
-            appearance: 'secondary',
-            reference: {
-              value: '{{PROJECTS_PAGE_ID}}',
-              relationTo: 'pages',
-            },
-          },
-        },
-      ],
-    },
+    ,
   ],
 }

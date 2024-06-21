@@ -22,4 +22,15 @@ export const MEDIA_BLOCK = `
 }
 `
 
+export const CARD_COLLECTION_BLOCK = `
+...on CardCollection {
+  blockType
+  cards {
+   richText
+    enableLink
+    link ${LINK_FIELDS()}
+  }
+}
+`
+
 

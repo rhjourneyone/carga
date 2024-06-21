@@ -1,4 +1,4 @@
-import { CONTENT, MEDIA_BLOCK } from './blocks'
+import { CARD_COLLECTION_BLOCK, CONTENT, MEDIA_BLOCK } from './blocks'
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
@@ -31,6 +31,7 @@ export const PAGE = `
           ${CONTENT}
           ${CONTENT}
           ${MEDIA_BLOCK}
+          ${CARD_COLLECTION_BLOCK}
            }
         ${META}
       }
