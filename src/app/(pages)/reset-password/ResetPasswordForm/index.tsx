@@ -1,8 +1,8 @@
 'use client'
 
+import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useRouter, useSearchParams } from 'next/navigation'
 
 import { Button } from '../../../_components/Button'
 import { Input } from '../../../_components/Input'
@@ -50,7 +50,7 @@ export const ResetPasswordForm: React.FC = () => {
         await login({ email: json.user.email, password: data.password })
 
         // Redirect them to `/account` with success message in URL
-        router.push('/account?success=Password reset successfully.')
+        router.push('/')
       } else {
         setError('There was a problem while resetting your password. Please try again later.')
       }

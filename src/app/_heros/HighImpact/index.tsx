@@ -10,21 +10,23 @@ import classes from './index.module.scss'
 
 export const HighImpactHero: React.FC<Page['hero']> = ({ richText, media, links }) => {
   return (
-    <Gutter className={classes.hero}>
-      <div className={classes.content}>
-        <RichText content={richText} />
-        {Array.isArray(links) && links.length > 0 && (
-          <ul className={classes.links}>
-            {links.map(({ link }, i) => {
-              return (
-                <li key={i}>
-                  <CMSLink {...link} />
-                </li>
-              )
-            })}
-          </ul>
-        )}
-      </div>
+    <div className={classes.hero}>
+      <Gutter >
+        <div className={classes.content}>
+          <RichText content={richText} />
+          {Array.isArray(links) && links.length > 0 && (
+            <ul className={classes.links}>
+              {links.map(({ link }, i) => {
+                return (
+                  <li key={i}>
+                    <CMSLink {...link} />
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </div>
+      </Gutter>
       <div className={classes.media}>
         {typeof media === 'object' && (
           <Fragment>
@@ -38,6 +40,6 @@ export const HighImpactHero: React.FC<Page['hero']> = ({ richText, media, links 
           </Fragment>
         )}
       </div>
-    </Gutter>
+    </div>
   )
 }

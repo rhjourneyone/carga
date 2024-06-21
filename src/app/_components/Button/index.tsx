@@ -1,7 +1,7 @@
 'use client'
 
-import React, { ElementType } from 'react'
 import Link from 'next/link'
+import React, { ElementType } from 'react'
 
 import classes from './index.module.scss'
 

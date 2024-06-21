@@ -1,4 +1,3 @@
-import React from 'react'
 import { Metadata } from 'next'
 
 import { Gutter } from '../../_components/Gutter'
@@ -11,7 +10,7 @@ import classes from './index.module.scss'
 
 export default async function Login() {
   await getMeUser({
-    validUserRedirect: `/account?warning=${encodeURIComponent('You are already logged in.')}`,
+    validUserRedirect: `/`,
   })
 
   return (

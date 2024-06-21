@@ -1,8 +1,3 @@
-{
-  /* eslint-disable @next/next/no-img-element */
-}
-
-import React from 'react'
 import Link from 'next/link'
 
 import { Header } from '../../../payload/payload-types'
@@ -12,7 +7,7 @@ import { HeaderNav } from './Nav'
 
 import classes from './index.module.scss'
 
-export async function Header() {
+export async function HeaderComponent() {
   let header: Header | null = null
 
   try {

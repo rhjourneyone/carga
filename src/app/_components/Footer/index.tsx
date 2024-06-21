@@ -1,15 +1,14 @@
-import React from 'react'
 import Link from 'next/link'
 
 import { Footer } from '../../../payload/payload-types'
-import { fetchFooter, fetchGlobals } from '../../_api/fetchGlobals'
+import { fetchFooter } from '../../_api/fetchGlobals'
 import { ThemeSelector } from '../../_providers/Theme/ThemeSelector'
 import { Gutter } from '../Gutter'
 import { CMSLink } from '../Link'
 
 import classes from './index.module.scss'
 
-export async function Footer() {
+export async function FooterComponent() {
   let footer: Footer | null = null
 
   try {

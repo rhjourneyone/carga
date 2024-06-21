@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 import { Gutter } from '../../../_components/Gutter'
 import { Message } from '../../../_components/Message'
